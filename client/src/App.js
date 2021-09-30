@@ -4,21 +4,27 @@ import './style.css';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar'
 import Product from './components/Products/Products'
+import ItemID from './components/DisplayItem/ItemID'
 
 function App() {
   return (
-    <>
-      <Navbar/>
-      <Product/>
-      {/* Login-component
-      <div className="auth-wrapper">
-        <div className="auth-inner">
-          <Login />
-        </div>
-      </div>*/}
-      
-    </>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Product} />
+        <Route path="/:id" component={ItemID} />
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
+
+{/* <Navbar/>
+<Product/>
+ Login-component
+<div className="auth-wrapper">
+  <div className="auth-inner">
+    <Login />
+  </div>
+</div>*/}

@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Product from './Product/Product';
 import useStyles from './styles';
-
+import { Link } from 'react-router-dom';
 
 const products = [
   {
@@ -201,7 +201,9 @@ const Products = () => {
         {products.map((product) => (
           <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
             {/* <Product product={product} onAddToCart={onAddToCart} /> */}
-            <Product product={product}/>
+            <Link to={`/${product.id}`}>
+                <Product product={product}/>
+            </Link>
           </Grid>
         ))}
       </Grid>
