@@ -20,7 +20,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
   const renderMobileMenu = (
     <Menu anchorEl={mobileMoreAnchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} id={mobileMenuId} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right' }} open={isMobileMenuOpen} onClose={handleMobileMenuClose}>
       <MenuItem>
-        <IconButton aria-label="Show cart items" color="inherit">
+        <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
           <Badge badgeContent={totalItems} color="secondary">
             <ShoppingCart />
           </Badge>
@@ -34,17 +34,21 @@ const PrimarySearchAppBar = ({ totalItems }) => {
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
-          <Typography variant="h6" className={classes.title} color="inherit">
-            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> DBS Commerce
-          </Typography>
+          <Link to='/' style={{ textDecoration: 'none' }}>
+            <Typography variant="h6" className={classes.title} color="inherit">
+              <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> DBS Commerce
+            </Typography>
+          </Link>
           <div className={classes.grow} />
           {/* {location.pathname === '/' && ( */}
           <div className={classes.button}>
+          <Link to='/cart' style={{ textDecoration: 'none' }}>
             <IconButton aria-label="Show cart items" color="inherit">
               <Badge badgeContent={totalItems} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
+          </Link>
           </div>
           
         </Toolbar>
