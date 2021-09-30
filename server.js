@@ -31,9 +31,9 @@ db.mongoose
 
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to digibank application." });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to digibank application." });
+// });
 
 require("./app/routes/item.routes")(app);
 
