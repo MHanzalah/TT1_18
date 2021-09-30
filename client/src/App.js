@@ -3,25 +3,33 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar'
 import Products from './components/Products/Products'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
-// import Detail from './components/Detail/Detail'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+
+
 
 function App() {
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
 
-  const handleAddToCart = async (productId, quantity) => {
-    useEffect(() => {
-      axios.get('http://localhost:5000/exercises/')
-          .then(response => {
-            setCart({
-              productId: response.data,
-              quantity: response.data
-            })
-          })
-          .catch((err) => {
-              console.log(err)
-          })
-    }, [])
+  const handleAddToCart = (productId, quantity) => {
+    var i;
+    if(cart.length === 0){
+      setCart([{
+        productId: productId,
+        quantity: quantity
+      }])
+    }
+    for (i = 0; i < cart.length; i++) {
+      if (cart[i].productId === productId) {
+        cart[i] = {
+          productId: productId,
+          quantity: quantity+1
+        }
+        setCart(cart)
+      }
+    console.log(cart)
+    }
   };
 
   return (
@@ -30,17 +38,24 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Products />
+            <Products onAddToCart={handleAddToCart}/>
           </Route>
           <Route exact path="/cart">
             <ShoppingCart />
           </Route>
-          {/* <Route exact path="/detail">
-            <Detail />
-          </Route> */}
+          <Route exact path="/login">
+            <div className="auth-wrapper">
+              <div className="auth-inner">
+                <Login />
+              </div>
+            </div>
+          </Route>
         </Switch>
       </div>
     </Router>
+
+
+
   );
 }
 

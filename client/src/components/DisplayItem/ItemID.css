@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.item-image {
+  height: auto;
+  width: auto;
+  
+  border:black;
+}
+
+
+.column .item-description h1{
+  background-color: azure;
+  
+}
+

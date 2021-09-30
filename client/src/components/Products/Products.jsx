@@ -189,7 +189,7 @@ const products = [
 ]
 
 // const Products = ({ products, onAddToCart }) => {
-const Products = () => {
+const Products = ({onAddToCart}) => {
   const classes = useStyles();
 
   if (!products.length) return <p>Loading...</p>;
@@ -201,7 +201,7 @@ const Products = () => {
         {products.map((product) => (
           <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
             {/* <Product product={product} onAddToCart={onAddToCart} /> */}
-            <Product product={product}/>
+            <Product product={product} onAddToCart={onAddToCart} />
           </Grid>
         ))}
       </Grid>

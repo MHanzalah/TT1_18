@@ -39,9 +39,13 @@ const PrimarySearchAppBar = ({ totalItems }) => {
               <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> DBS Commerce
             </Typography>
           </Link>
+
           <div className={classes.grow} />
           {/* {location.pathname === '/' && ( */}
           <div className={classes.button}>
+          <Link to='/login' style={{ textDecoration: 'none' }}>
+            Login
+          </Link>
           <Link to='/cart' style={{ textDecoration: 'none' }}>
             <IconButton aria-label="Show cart items" color="inherit">
               <Badge badgeContent={totalItems} color="secondary">
