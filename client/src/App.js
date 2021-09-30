@@ -1,21 +1,23 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './style.css';
+import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar'
-import Products from './components/Products/Products'
-import ItemID from './components/DisplayItem/ItemID';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Product from './components/Products/Products'
 
 function App() {
   return (
-    <Router>
     <>
-      <Switch>
-        <Route path="/item-:id" component={ItemID} />
-      </Switch>
+      <Navbar/>
+      <Product/>
+      {/* Login-component
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <Login />
+        </div>
+      </div>*/}
+      
     </>
-  </Router>
-    // <div className="App">
-    //   <Products />
-    //   <Navbar />
-    // </div>
   );
 }
 
