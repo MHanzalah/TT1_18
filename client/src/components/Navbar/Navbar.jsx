@@ -31,7 +31,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
   );
 
   return (
-    <>
+    <Link to={"/"}>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Link to='/' style={{ textDecoration: 'none' }}>
@@ -58,7 +58,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-    </>
+    </Link>
   );
 };
 

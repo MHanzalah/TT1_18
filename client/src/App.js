@@ -4,9 +4,8 @@ import Navbar from './components/Navbar/Navbar'
 import Products from './components/Products/Products'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
 import Login from './components/Login/Login';
+import ItemID from './components/DisplayItem/ItemID'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-
 
 
 function App() {
@@ -40,6 +39,9 @@ function App() {
           <Route exact path="/">
             <Products onAddToCart={handleAddToCart}/>
           </Route>
+          <Route path="/:id">
+            <ItemID/>
+          </Route>
           <Route exact path="/cart">
             <ShoppingCart />
           </Route>
@@ -53,10 +55,8 @@ function App() {
         </Switch>
       </div>
     </Router>
-
-
-
   );
 }
 
 export default App;
+
