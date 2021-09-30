@@ -39,9 +39,6 @@ function App() {
           <Route exact path="/">
             <Products onAddToCart={handleAddToCart}/>
           </Route>
-          <Route path="/:id">
-            <ItemID/>
-          </Route>
           <Route exact path="/cart">
             <ShoppingCart />
           </Route>
@@ -51,6 +48,9 @@ function App() {
                 <Login />
               </div>
             </div>
+          </Route>
+          <Route path="/:id">
+            <ItemID/>
           </Route>
         </Switch>
       </div>
