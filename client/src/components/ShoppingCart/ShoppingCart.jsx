@@ -6,7 +6,6 @@ import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import DeleteIcon from '@material-ui/icons/Delete'
 
-
 import useStyles from './styles';
 
 const ShoppingCart = ({ }) => {
