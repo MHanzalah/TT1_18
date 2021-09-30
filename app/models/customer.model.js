@@ -3,12 +3,12 @@ module.exports = mongoose => {
     var schema = mongoose.Schema(
       {
         id: Number,
-        title: String,
-        price: Number,
-        description: String,
-        category_id: Number,
-        image: String,
-        qty: Number
+        username: String,
+        password: String,
+        first_name: String,
+        last_name: String,
+        postal_code: String,
+        gender: String,
       },
       { timestamps: true }
     );
@@ -19,6 +19,6 @@ module.exports = mongoose => {
     //   return object;
     // });
   
-    const Item = mongoose.model("Item", schema);
-    return Item;
+    const Customer = mongoose.model("Customer", custSchema);
+    return Customer;
   };

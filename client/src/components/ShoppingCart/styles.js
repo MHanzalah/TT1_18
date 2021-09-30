@@ -1,4 +1,5 @@
 import { makeStyles, theme } from '@material-ui/core/styles';
+import { CenterFocusStrong, CenterFocusStrongSharp } from '@material-ui/icons';
 
 export default makeStyles((theme) => ({
   root: {
@@ -11,5 +12,23 @@ export default makeStyles((theme) => ({
   },
   productDesc: {
     marginTop: theme.spacing(2),
-  }
+  },
+
+  Media: {
+    paddingBottom: 20,
+    paddingTop: 20,
+    width: 100,
+    height: 100
+  },
+
+  totalprice: {
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(1),
+    textAlign: 'right'
+  },
+
+  BtnGrp: {
+    textAlign: 'right'
+  },
+
 }));
